@@ -4,12 +4,13 @@ import { resolveComponent } from '@formily/antdv/esm/__builtins__'
 import type { SelectProps as AntSelectProps } from 'ant-design-vue'
 import { Select as AntSelect } from 'ant-design-vue'
 import { defineComponent } from 'vue'
+import type { Component } from 'vue'
 
 const AntOption = AntSelect.Option
 type AntOptionProps = typeof AntOption
 
 export type SelectProps = AntSelectProps & {
-  options?: Array<AntOptionProps & { component: Vue.Component }>
+  options?: Array<AntOptionProps & { component: Component }>
 }
 const SelectOption = defineComponent({
   name: 'FSelect',

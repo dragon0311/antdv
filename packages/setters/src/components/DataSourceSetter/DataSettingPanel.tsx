@@ -137,8 +137,6 @@ export const DataSettingPanel = observer(
                       <SchemaVoidField
                         x-component="ArrayItems.Remove"
                         x-visible={allowExtendOption}
-                        x-component-
-                        {...{}}
                       />
                     </SchemaObjectField>
                   </SchemaArrayField>

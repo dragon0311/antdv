@@ -3,7 +3,10 @@ import { composeExport } from '@formily/antdv/esm/__builtins__'
 import { Button } from 'ant-design-vue'
 import type { PropType } from 'vue'
 import { defineComponent } from 'vue'
-import { useOperation, usePrefix } from '../../hooks'
+import {
+  // useOperation,
+  usePrefix
+} from '../../hooks'
 import { IconWidget } from '../IconWidget'
 
 export interface IDeleteProps {
@@ -14,7 +17,7 @@ const DeleteComponent = defineComponent({
   name: 'DnDelete',
   props: { node: { type: Object as PropType<TreeNode> } },
   setup(props) {
-    const operationRef = useOperation()
+    // const operationRef = useOperation()
     const prefixRef = usePrefix('aux-copy')
     return () => {
       if (props.node === props.node.root) return null
@@ -23,7 +26,8 @@ const DeleteComponent = defineComponent({
           class={prefixRef.value}
           type="primary"
           onClick={() => {
-            operationRef.value.removeNodes([props.node])
+            // operationRef.value.removeNodes([props.node])
+            props.node.remove()
           }}
         >
           <IconWidget infer="Remove" />

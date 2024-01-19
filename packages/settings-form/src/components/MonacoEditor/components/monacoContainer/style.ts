@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'vue/types/jsx'
+import type { CSSProperties } from 'vue'
 
 const styles: Record<'wrapper' | 'fullWidth' | 'hide', CSSProperties> = {
   wrapper: {

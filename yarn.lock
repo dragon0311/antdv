@@ -2237,10 +2237,10 @@
     npmlog "^4.1.2"
     write-file-atomic "^3.0.3"
 
-"@monaco-editor/loader@^1.3.2":
-  version "1.4.0"
-  resolved "https://registry.npmmirror.com/@monaco-editor/loader/-/loader-1.4.0.tgz#f08227057331ec890fa1e903912a5b711a2ad558"
-  integrity sha512-00ioBig0x642hytVspPl7DbQyaSWRaolYie/UFNjoTdvoKPzo6xrXLhTk9ixgIKcLH5b5vDOjVNiGyY+uDCUlg==
+"@monaco-editor/loader@1.3.0":
+  version "1.3.0"
+  resolved "https://registry.npmmirror.com/@monaco-editor/loader/-/loader-1.3.0.tgz#659fbaf1d612ea67b2a0519a18612d1c4813e444"
+  integrity sha512-N3mGq1ktC3zh7WUx3NGO+PSDdNq9Vspk/41rEmRdrCqV9vNbBTRzAOplmUpNQsi+hmTs++ERMBobMERb8Kb+3g==
   dependencies:
     state-local "^1.0.6"
 
@@ -2938,6 +2938,13 @@
   dependencies:
     "@vue/shared" "3.3.4"
 
+"@vue/reactivity@3.4.14":
+  version "3.4.14"
+  resolved "https://registry.npmmirror.com/@vue/reactivity/-/reactivity-3.4.14.tgz#3970f9b813101e7e8555359aaae3ea6819eb4450"
+  integrity sha512-xRYwze5Q4tK7tT2J4uy4XLhK/AIXdU5EBUu9PLnIHcOKXO0uyXpNNMzlQKuq7B+zwtq6K2wuUL39pHA6ZQzObw==
+  dependencies:
+    "@vue/shared" "3.4.14"
+
 "@vue/runtime-core@3.3.4":
   version "3.3.4"
   resolved "https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.3.4.tgz#4bb33872bbb583721b340f3088888394195967d1"
@@ -2945,6 +2952,14 @@
   dependencies:
     "@vue/reactivity" "3.3.4"
     "@vue/shared" "3.3.4"
+
+"@vue/runtime-core@^3.4.14":
+  version "3.4.14"
+  resolved "https://registry.npmmirror.com/@vue/runtime-core/-/runtime-core-3.4.14.tgz#bbb6317d2dfd5742711ae1c09132f219268f8598"
+  integrity sha512-qu+NMkfujCoZL6cfqK5NOfxgXJROSlP2ZPs4CTcVR+mLrwl4TtycF5Tgo0QupkdBL+2kigc6EsJlTcuuZC1NaQ==
+  dependencies:
+    "@vue/reactivity" "3.4.14"
+    "@vue/shared" "3.4.14"
 
 "@vue/runtime-dom@3.3.4":
   version "3.3.4"
@@ -2967,6 +2982,11 @@
   version "3.3.4"
   resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.3.4.tgz#06e83c5027f464eef861c329be81454bc8b70780"
   integrity sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==
+
+"@vue/shared@3.4.14":
+  version "3.4.14"
+  resolved "https://registry.npmmirror.com/@vue/shared/-/shared-3.4.14.tgz#bc2d199a42a87f0349492fdfb83abc205ddd4d60"
+  integrity sha512-nmi3BtLpvqXAWoRZ6HQ+pFJOHBU4UnH3vD3opgmwXac7vhaHKA9nj1VeGjMggdB9eLtW83eHyPCmOU1qzdsC7Q==
 
 "@vue/test-utils@^2.0.0":
   version "2.4.1"
@@ -3138,7 +3158,7 @@
     "@vuepress/core" "2.0.0-beta.38"
     prismjs "^1.27.0"
 
-"@vuepress/plugin-search@2.0.0-beta.38", "@vuepress/plugin-search@^2.0.0-beta.37":
+"@vuepress/plugin-search@^2.0.0-beta.37":
   version "2.0.0-beta.38"
   resolved "https://registry.npmmirror.com/@vuepress/plugin-search/-/plugin-search-2.0.0-beta.38.tgz#aecbd09cf228f6f0552c1ee94d9abebb238dd6a8"
   integrity sha512-bv5rDpXFjssYiP6wDdskObcKm9cEevKXVThx/F+0rwN0mVACqbEET0RvLeoU3uE5PYWJYB6lmh7xdn/74fPkWg==
@@ -12606,7 +12626,7 @@ vue-types@^3.0.0:
   dependencies:
     is-plain-object "3.0.1"
 
-vue@^3.2.31, vue@^3.2.37, vue@^3.3.0:
+vue@^3.2.31, vue@^3.3.0:
   version "3.3.4"
   resolved "https://registry.npmmirror.com/vue/-/vue-3.3.4.tgz#8ed945d3873667df1d0fcf3b2463ada028f88bd6"
   integrity sha512-VTyEYn3yvIeY1Py0WaYGZsXnz3y5UnGi62GjVEqvEGPl6nxbOrCXbVOTQWBEJUqAyTUk2uJ5JLVnYJ6ZzGbrSw==

@@ -11,7 +11,9 @@ function useMonaco() {
   const unload = () => monacoLoader.cancel()
 
   monacoLoader
-    .then((monacoInstance) => (monacoRef.value = monacoInstance))
+    .then((monacoInstance) => {
+      monacoRef.value = monacoInstance
+    })
     .catch((error) => {
       if (error?.type !== 'cancelation') {
         // eslint-disable-next-line no-console

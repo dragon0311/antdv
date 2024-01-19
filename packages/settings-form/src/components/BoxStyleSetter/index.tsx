@@ -2,13 +2,14 @@ import { useField } from '@formily/vue'
 import { usePrefix } from '@formily/antdv-designable'
 import type { PropType } from 'vue'
 import { defineComponent, unref } from 'vue'
+import type { Component } from 'vue'
 import { FoldItem } from '../FoldItem'
 import { InputItems } from '../InputItems'
 import { SizeInput } from '../SizeInput'
 
 type Position = 'top' | 'right' | 'left' | 'bottom' | 'all'
 export interface IMarginStyleSetterProps {
-  labels?: Vue.Component[]
+  labels?: Component[]
   value?: string
   onChange?: (value: string) => void
 }

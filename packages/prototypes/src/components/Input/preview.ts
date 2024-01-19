@@ -2,11 +2,12 @@ import { createBehavior, createResource } from '@pind/designable-core'
 import { Input as FormilyInput } from '@formily/antdv'
 import type { DnFC } from '@formily/antdv-designable'
 import { composeExport } from '@formily/antdv/esm/__builtins__'
+import type { Component } from 'vue'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'
 import { createFieldSchema } from '../Field'
 
-export const Input: DnFC<Vue.Component<any, any, any, typeof FormilyInput>> = composeExport(
+export const Input: DnFC<Component<any, any, any, typeof FormilyInput>> = composeExport(
   FormilyInput,
   {
     Behavior: createBehavior(

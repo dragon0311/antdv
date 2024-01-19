@@ -27,7 +27,7 @@ const CopyComponent = defineComponent({
           style={style}
           type="primary"
           onClick={() => {
-            operationRef.value.cloneNodes([props.node])
+            operationRef.value.tree.append(props.node.clone())
           }}
         >
           <IconWidget infer="Clone" />

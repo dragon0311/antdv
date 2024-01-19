@@ -196,6 +196,7 @@ export const ReactionsSetter = defineComponent({
       const form = formRef.value
       const formCollapse = formCollapseRef.value
       const prefix = prefixRef.value
+
       return (
         <FragmentComponent>
           <Button onClick={openModal}>
@@ -229,8 +230,7 @@ export const ReactionsSetter = defineComponent({
                 <SchemaField>
                   <SchemaVoidField
                     x-component="FormCollapse"
-                    x-component-
-                    {...{
+                    x-component-props={{
                       formCollapse,
                       defaultActiveKey: ['deps', 'state'],
                       style: { marginBottom: 10 }
@@ -238,8 +238,7 @@ export const ReactionsSetter = defineComponent({
                   >
                     <SchemaVoidField
                       x-component="FormCollapse.CollapsePanel"
-                      x-component-
-                      {...{
+                      x-component-props={{
                         key: 'deps',
                         header: GlobalRegistry.getDesignerMessage(
                           'SettingComponents.ReactionsSetter.relationsFields'
@@ -250,8 +249,7 @@ export const ReactionsSetter = defineComponent({
                         <SchemaObjectField>
                           <SchemaVoidField
                             x-component="ArrayTable.Column"
-                            x-component-
-                            {...{
+                            x-component-props={{
                               title: GlobalRegistry.getDesignerMessage(
                                 'SettingComponents.ReactionsSetter.sourceField'
                               ),
@@ -262,8 +260,7 @@ export const ReactionsSetter = defineComponent({
                               name="source"
                               x-decorator="FormItem"
                               x-component="PathSelector"
-                              x-component-
-                              {...{
+                              x-component-props={{
                                 placeholder: GlobalRegistry.getDesignerMessage(
                                   'SettingComponents.ReactionsSetter.pleaseSelect'
                                 )
@@ -272,8 +269,7 @@ export const ReactionsSetter = defineComponent({
                           </SchemaVoidField>
                           <SchemaVoidField
                             x-component="ArrayTable.Column"
-                            x-component-
-                            {...{
+                            x-component-props={{
                               title: GlobalRegistry.getDesignerMessage(
                                 'SettingComponents.ReactionsSetter.sourceProperty'
                               ),
@@ -285,15 +281,13 @@ export const ReactionsSetter = defineComponent({
                               default="value"
                               x-decorator="FormItem"
                               x-component="Select"
-                              x-component-
-                              {...{ showSearch: true }}
+                              x-component-props={{ showSearch: true }}
                               enum={FieldStateProperties}
                             />
                           </SchemaVoidField>
                           <SchemaVoidField
                             x-component="ArrayTable.Column"
-                            x-component-
-                            {...{
+                            x-component-props={{
                               title: GlobalRegistry.getDesignerMessage(
                                 'SettingComponents.ReactionsSetter.variableName'
                               ),
@@ -310,8 +304,7 @@ export const ReactionsSetter = defineComponent({
                                 )
                               }}
                               x-component="Input"
-                              x-component-
-                              {...{
+                              x-component-props={{
                                 addonBefore: '$deps.',
                                 placeholder: GlobalRegistry.getDesignerMessage(
                                   'SettingComponents.ReactionsSetter.pleaseInput'
@@ -331,8 +324,7 @@ export const ReactionsSetter = defineComponent({
 
                           <SchemaVoidField
                             x-component="ArrayTable.Column"
-                            x-component-
-                            {...{
+                            x-component-props={{
                               title: GlobalRegistry.getDesignerMessage(
                                 'SettingComponents.ReactionsSetter.variableType'
                               ),
@@ -376,8 +368,7 @@ export const ReactionsSetter = defineComponent({
                           </SchemaVoidField>
                           <SchemaVoidField
                             x-component="ArrayTable.Column"
-                            x-component-
-                            {...{
+                            x-component-props={{
                               title: GlobalRegistry.getDesignerMessage(
                                 'SettingComponents.ReactionsSetter.operations'
                               ),
@@ -393,16 +384,14 @@ export const ReactionsSetter = defineComponent({
                             'SettingComponents.ReactionsSetter.addRelationField'
                           )}
                           x-component="ArrayTable.Addition"
-                          x-component-
-                          {...{ style: { marginTop: 8 } }}
+                          x-component-props={{ style: { marginTop: 8 } }}
                         />
                       </SchemaArrayField>
                     </SchemaVoidField>
 
                     <SchemaVoidField
                       x-component="FormCollapse.CollapsePanel"
-                      x-component-
-                      {...{
+                      x-component-props={{
                         header: GlobalRegistry.getDesignerMessage(
                           'SettingComponents.ReactionsSetter.propertyReactions'
                         ),
@@ -414,8 +403,7 @@ export const ReactionsSetter = defineComponent({
                     </SchemaVoidField>
                     <SchemaVoidField
                       x-component="FormCollapse.CollapsePanel"
-                      x-component-
-                      {...{
+                      x-component-props={{
                         key: 'run',
                         header: GlobalRegistry.getDesignerMessage(
                           'SettingComponents.ReactionsSetter.actionReactions'
@@ -426,8 +414,7 @@ export const ReactionsSetter = defineComponent({
                       <SchemaStringField
                         name="fulfill.run"
                         x-component="MonacoInput"
-                        x-component-
-                        {...{
+                        x-component-props={{
                           width: '100%',
                           height: 400,
                           language: 'typescript',

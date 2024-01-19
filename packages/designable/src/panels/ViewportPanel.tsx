@@ -8,6 +8,7 @@ export const ViewportPanel = defineComponent({
     return () => {
       return (
         <WorkspacePanel.Item flexable={true}>
+          123
           <Simulator> {slots.default?.()} </Simulator>
         </WorkspacePanel.Item>
       )

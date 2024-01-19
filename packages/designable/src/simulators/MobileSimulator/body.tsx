@@ -1,6 +1,6 @@
 import { observer } from '@formily/reactive-vue'
 import { defineComponent } from 'vue'
-import type { CSSProperties } from 'vue/types/jsx'
+import type { CSSProperties } from 'vue'
 import { usePrefix, useScreen, useTheme } from '../../hooks'
 
 const MockupImages = {

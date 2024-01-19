@@ -1,5 +1,5 @@
 import { computed, defineComponent, onMounted, ref } from 'vue'
-import type { CSSProperties } from 'vue/types/jsx'
+import type { CSSProperties } from 'vue'
 import Loading from '../loading'
 import styles from './style'
 import type { MonacoContainerProps } from './types'
@@ -19,22 +19,24 @@ export default defineComponent({
     })
 
     const containerStyle = computed<CSSProperties>(() => {
+      // console.log('(!props.isEditorReady && styles.hide)', !props.isEditorReady && styles.hide)
+
       return {
         ...styles.fullWidth,
         ...(!props.isEditorReady && styles.hide)
+        // ...(!props.isEditorReady && styles.hide)
       }
     })
+
     onMounted(() => {
       props.setContainerRef(containerRef)
     })
 
-    return () => {
-      return (
-        <div style={wrapperStyle.value}>
-          {!props.isEditorReady && <Loading>{slots.default?.()}</Loading>}
-          <div ref="containerRef" style={containerStyle.value} class={props.className} />
-        </div>
-      )
-    }
+    return () => (
+      <div style={wrapperStyle.value}>
+        {!props.isEditorReady && <Loading>{slots.default?.()}</Loading>}
+        <div ref={containerRef} style={containerStyle.value} class={props.className} />
+      </div>
+    )
   }
 })

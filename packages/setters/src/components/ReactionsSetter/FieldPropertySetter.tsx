@@ -24,8 +24,8 @@ export const FieldPropertySetter = defineComponent({
   props: { value: { type: Object }, extraLib: {} },
   emits: ['change'],
   setup(props, { emit }) {
-    const selectKeyRef = ref('visible')
-    const setSelectKey = (value: string) => (selectKeyRef.value = value)
+    const selectKeysRef = ref(['visible'])
+    const setSelectedKeys = (value: string[]) => (selectKeysRef.value = value)
     const prefixRef = usePrefix('field-property-setter')
 
     const parseExpression = (expression: string) => {
@@ -48,8 +48,8 @@ export const FieldPropertySetter = defineComponent({
     return () => {
       const prefix = prefixRef.value
       const value = { ...props.value }
-      const selectKey = selectKeyRef.value
-      const currentProperty = FieldProperties.find((item) => item.key === selectKey)
+      const selectKeys = selectKeysRef.value
+      const currentProperty = FieldProperties.find((item) => item.key === selectKeys[0])
       return (
         <div class={prefix}>
           <Menu
@@ -61,15 +61,15 @@ export const FieldPropertySetter = defineComponent({
               overflowY: 'auto',
               overflowX: 'hidden'
             }}
-            defaultActive={selectKey}
+            selectedKeys={selectKeys}
             onSelect={(selectedKey) => {
-              setSelectKey(selectedKey)
+              setSelectedKeys([selectedKey.key as string])
             }}
           >
             {FieldProperties.map((key) => {
               if (isPlainObj(key)) {
                 return (
-                  <Menu.Item index={key.key}>
+                  <Menu.Item key={key.key}>
                     <TextWidget
                       token={`SettingComponents.ReactionsSetter.${key.token || key.key}`}
                     />
@@ -77,7 +77,7 @@ export const FieldPropertySetter = defineComponent({
                 )
               }
               return (
-                <Menu.Item index={key}>
+                <Menu.Item key={key}>
                   <TextWidget token={`SettingComponents.ReactionsSetter.${key}`} />
                 </Menu.Item>
               )
@@ -85,7 +85,7 @@ export const FieldPropertySetter = defineComponent({
           </Menu>
           <div class={prefix + '-coder-wrapper'}>
             <div class={prefix + '-coder-start'}>
-              {`$self.${selectKey} = (`}
+              {`$self.${selectKeys[0]} = (`}
               <span
                 style={{
                   fontSize: 14,
@@ -102,11 +102,11 @@ export const FieldPropertySetter = defineComponent({
             </div>
             <div class={prefix + '-coder'}>
               <MonacoInput
-                key={selectKey}
+                key={selectKeys[0]}
                 language="javascript.expression"
                 extraLib={props.extraLib as string}
                 helpCode={template(currentProperty?.helpCode)}
-                value={parseExpression(value[selectKey])}
+                value={parseExpression(value[selectKeys[0]])}
                 height={226}
                 options={{
                   lineNumbers: 'off',
@@ -124,7 +124,7 @@ export const FieldPropertySetter = defineComponent({
                     'change',
                     filterEmpty({
                       ...value,
-                      [selectKey]: `{{${expression}}}`
+                      [selectKeys[0]]: `{{${expression}}}`
                     })
                   )
                 }}
